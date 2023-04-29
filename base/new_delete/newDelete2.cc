@@ -64,6 +64,12 @@ public:
         cout << "调用operator delete函数" << endl;
         free(p);
     }
+    void destory(){
+        //this->~Student2();
+        delete[] this->_name;
+        this->_name = nullptr;
+        cout << "释放申请的堆空间" << endl;
+    }
 
 private:
     ~Student2() {
@@ -83,10 +89,11 @@ int main() {
     // s1.print();
     // // Student1 *p = new Student1(101, "zhangsan");
 
+    //Student2只能申请堆空间对象
     //Student2 s2(102, "lisi");
     Student2 *p = new Student2(102, "lisi");
     p->print();
-    //delete p;//这里怎么回收
+    p->destory();//这里怎么回收
 
     return 0;
 }
