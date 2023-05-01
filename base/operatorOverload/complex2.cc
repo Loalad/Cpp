@@ -1,6 +1,5 @@
- /*运算符重载
- **1、成员函数进行重载（对象本身发生了变化）（+=）（++/--）
- **2、普通函数的友元进行重载（对象未发生变化）（+）(>/<)
+ /*运算符 << 重载
+ **可以达到 cout << c1(自定义类型) 的目的
  */
 #include <iostream>
 using std::cout;
@@ -11,18 +10,6 @@ class Complex {
 public:
     Complex(double real, double image) : _real(real), _image(image) {
         cout << "构造函数" << endl;
-    }
-
-    void print() {
-        cout << _real;
-        if (_image > 0) {
-            if (_image == 1) cout << "+" << "j" << endl;
-            else cout << "+" << _image << "j" << endl;
-        } else if (_image == 0) cout << endl;
-        else {
-            if (_image == -1) cout << "-" << "j" << endl;
-            else cout << "-" << (-1) * _image << "j" << endl;
-        }
     }
 
 private:
