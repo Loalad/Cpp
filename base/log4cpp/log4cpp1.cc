@@ -119,7 +119,6 @@ void test2() {
         mycat.alert("This is a alert msg");
     }
 
-
     Category::shutdown();
 }
 
